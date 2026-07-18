@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEST SET — built from the 45-channel sample you sent (MBC + Rotana block).
+  Real site_id values pulled directly from iptv-org/epg's own channel lists,
+  not guessed.
+
+  IMPORTANT: your provider's epg_channel_id is null for every channel, so
+  Smarters Pro has nothing built-in to match against. When you add this as a
+  manual "EPG URL" under Xtream Codes login, we don't yet know for certain
+  whether Smarters matches by channel NAME (most likely) or ignores files
+  with no epg_channel_id entirely. That's exactly what this small batch is
+  for — test it before we build out all 528 channels.
+
+  Multiple provider entries (HD / 4K / plain) are quality variants of the
+  SAME channel and share one EPG entry below — that's expected, not a gap.
+-->
+<channels>
+  <!-- MBC — site: shahid.mbc.net -->
+  <channel site="shahid.mbc.net" site_id="387238" lang="ar" xmltv_id="MBC1.ae@SD">MBC 1</channel>
+  <channel site="shahid.mbc.net" site_id="400917" lang="ar" xmltv_id="MBC2.ae@SD">MBC 2</channel>
+  <channel site="shahid.mbc.net" site_id="409385" lang="ar" xmltv_id="MBC3.ae@SD">MBC 3</channel>
+  <channel site="shahid.mbc.net" site_id="400919" lang="ar" xmltv_id="MBC4.ae@SD">MBC 4</channel>
+  <channel site="shahid.mbc.net" site_id="387937" lang="ar" xmltv_id="MBC5.ae@SD">MBC 5</channel>
+  <channel site="shahid.mbc.net" site_id="387251" lang="ar" xmltv_id="MBCDrama.ae@SD">MBC Drama</channel>
+  <channel site="shahid.mbc.net" site_id="400924" lang="ar" xmltv_id="MBCMax.ae@SD">MBC Max</channel>
+  <channel site="shahid.mbc.net" site_id="400921" lang="ar" xmltv_id="MBCAction.ae@SD">MBC Action</channel>
+  <channel site="shahid.mbc.net" site_id="409387" lang="ar" xmltv_id="MBCBollywood.ae@SD">MBC Bollywood</channel>
+  <channel site="shahid.mbc.net" site_id="387294" lang="ar" xmltv_id="MBCIraq.iq@SD">MBC Iraq</channel>
+  <channel site="shahid.mbc.net" site_id="387290" lang="ar" xmltv_id="MBCMasr.eg@SD">MBC Masr</channel>
+  <channel site="shahid.mbc.net" site_id="387293" lang="ar" xmltv_id="MBCMasr2.eg@SD">MBC Masr 2</channel>
+  <channel site="shahid.mbc.net" site_id="418308" lang="ar" xmltv_id="MBCPersia.ae@SD">MBC Persia</channel>
+  <channel site="shahid.mbc.net" site_id="388567" lang="ar" xmltv_id="MBCFM.ae@SD">MBC FM</channel>
+  <!-- best-guess, unconfirmed: your "MBC Drama Plus" may map to this -->
+  <channel site="shahid.mbc.net" site_id="387296" lang="ar" xmltv_id="MBCPlusDrama.sa@SD">MBC Drama Plus</channel>
+
+  <!-- Rotana — site: rotana.net -->
+  <channel site="rotana.net" site_id="431" lang="ar" xmltv_id="RotanaCinemaKSA.sa@SD">Rotana Cinema KSA</channel>
+  <channel site="rotana.net" site_id="437" lang="ar" xmltv_id="RotanaComedy.sa@SD">Rotana Comedy</channel>
+  <channel site="rotana.net" site_id="438" lang="ar" xmltv_id="RotanaClassic.sa@SD">Rotana Classic</channel>
+  <channel site="rotana.net" site_id="436" lang="ar" xmltv_id="RotanaDrama.sa@SD">Rotana Drama</channel>
+  <channel site="rotana.net" site_id="435" lang="ar" xmltv_id="RotanaKhalijia.sa@SD">Rotana Khalijeah</channel>
+  <channel site="rotana.net" site_id="443" lang="ar" xmltv_id="RotanaClip.sa@SD">Rotana Clip</channel>
+
+  <!--
+    NOT COVERED by iptv-org/epg sources — no listing source found for these
+    in your sample, will show "No Information":
+      - Rotana Aflam+
+      - Rotana Masriya
+      - Rotana Music
+      - plain "Rotana Cinema" (only KSA/Egypt-specific feeds exist in this
+        source — your non-suffixed "Rotana Cinema HD/4K" may or may not be
+        the same feed as Rotana Cinema KSA, unconfirmed)
+    We'd need a different/broader source (or a custom scraper) for these.
+  -->
+</channels>
