@@ -16,8 +16,11 @@
 -->
 <channels>
   <!-- MBC — site: shahid.mbc.net -->
-  <channel site="shahid.mbc.net" site_id="387238" lang="ar" xmltv_id="MBC1.ae@SD">MBC 1</channel>
-  <channel site="shahid.mbc.net" site_id="400917" lang="ar" xmltv_id="MBC2.ae@SD">MBC 2</channel>
+  <channel site="shahid.mbc.net" site_id="387238" lang="ar" xmltv_id="AR: MBC 1">MBC 1</channel>
+  <channel site="shahid.mbc.net" site_id="387238" lang="ar" xmltv_id="AR: MBC 1 HD">MBC 1</channel>
+  <channel site="shahid.mbc.net" site_id="387238" lang="ar" xmltv_id="AR: MBC 1 4K">MBC 1</channel>
+  <channel site="shahid.mbc.net" site_id="400917" lang="ar" xmltv_id="AR: MBC 2 4K">MBC 2</channel>
+  <channel site="shahid.mbc.net" site_id="400917" lang="ar" xmltv_id="AR: MBC 2">MBC 2</channel>
   <channel site="shahid.mbc.net" site_id="409385" lang="ar" xmltv_id="MBC3.ae@SD">MBC 3</channel>
   <channel site="shahid.mbc.net" site_id="400919" lang="ar" xmltv_id="MBC4.ae@SD">MBC 4</channel>
   <channel site="shahid.mbc.net" site_id="387937" lang="ar" xmltv_id="MBC5.ae@SD">MBC 5</channel>
