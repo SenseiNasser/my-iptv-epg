@@ -1,0 +1,47 @@
+name: Update EPG
+
+# Runs every 6 hours, plus you can trigger it manually from the Actions tab
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  build-epg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Clone the iptv-org/epg grabber
+        run: git clone --depth 1 https://github.com/iptv-org/epg.git grabber
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install grabber dependencies
+        working-directory: grabber
+        run: npm install
+
+      - name: Copy our channel mapping into the grabber
+        run: cp channels.xml grabber/channels.xml
+
+      - name: Create output folder
+        run: mkdir -p dist
+
+      - name: Grab the guide (3 days of listings)
+        working-directory: grabber
+        run: npm run grab -- --channels=channels.xml --output=../dist/guide.xml --days=3
+
+      - name: Compress the guide
+        run: gzip -kf dist/guide.xml
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          publish_branch: gh-pages
+          keep_files: false
